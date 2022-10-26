@@ -1,13 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
 int Line3(int count)
 {
     for (count; count > 1; count--)
-    {
         printf("%i men, ", count);
-    }
 
     printf("1 man and his dog spot");
     
@@ -30,7 +27,6 @@ int main(void)
     printf("%i man went to mow\nwent to mow a meadow\n", BigCount);
     Line3(BigCount);
     printf("\nwent to mow a meadow\n\n");
-    
     
 }
 
