@@ -27,6 +27,5 @@ int main(void)
     printf("%i man went to mow\nwent to mow a meadow\n", BigCount);
     Line3(BigCount);
     printf("\nwent to mow a meadow\n\n");
-    
 }
 
