@@ -14,7 +14,7 @@ int Line3(int count)
 int main(void)
 {
     int BigCount;
-    printf("enter your start value\n");
+    printf("Enter your start value\n");
     scanf("%i", &BigCount);
 
     for ( BigCount; BigCount > 1; BigCount--)
