@@ -5,7 +5,7 @@ int main(void)
 {
     int fibbEnd, loopCounter, one, two, total, i;
 
-    printf("Enter start value\n");
+    printf("Enter end value\n");
     scanf("%i", &fibbEnd);
     if (fibbEnd == 0 || fibbEnd == 1)
     {
