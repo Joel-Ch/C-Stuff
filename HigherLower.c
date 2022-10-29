@@ -8,24 +8,24 @@ int main(void)
     printf("Starting game!\nPlease pick a level\n");
     scanf("%i", &level);
 
-    random = (rand() % ((level*10) - (level/10) + 1)) + (level/10);
+    random = abs((rand() % ((level*10) - (level/10) + 1)) + (level/10));
+
+    printf("Please guess a number\n");
 
     do
     {
-        printf("Please guess a number\n");
         scanf("%i", &guess);
-        printf("%i", guess);
 
         if (random < guess)
-            printf("    V\n");
+            printf("Guess lower\n");
 
         else if (random > guess)
         {
-            printf("    ^\n");
+            printf("Guess higher\n");
         }
         else if (random == guess)
         {
-            printf("\nCorrect, the number was %i", random);
+            printf("Correct, the number was %i", random);
         }
     } while (random != guess);
 
