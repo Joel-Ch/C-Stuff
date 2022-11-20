@@ -7,7 +7,7 @@ int main()
 
     char morse[36][7] = {".-", "-...", "-.-.", "-..", ".", "..-", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", ".----", "..---", "...--", "....-", ".....", "-....", "--....", "---..", "----.", "-----"};
 
-    char phrase[50];
+    char phrase[500];
 
     puts("please enter an uppercase phrase");
     // NB: This V wacky symbol just means it keeps reading until it gets to a new line (so it can read spaces)
@@ -21,27 +21,43 @@ int main()
         {
             if (phrase[i] == text[counter])
             {
-                printf("%s ", morse[counter]);
+                printf("%s/", morse[counter]);
             }
         }
     }
 
     char morsePhrase[50];
-    puts("please enter a morse code message");
+    // puts("please enter a morse code message");
     scanf("%s", &morsePhrase);
 
-    char *morseWord = strtok(morsePhrase, " ");
+    /* get the first token */
+    char *morseWord = strtok(morsePhrase, "/");
 
-    // the bit under here doesnt work -> issue stems from comparing 3D array with 2D array - use map?
-
-    for (int i = 0; i < strlen(morsePhrase); ++i)
+    /* walk through other tokens */
+    while (morseWord != NULL)
     {
         for (int counter = 0; counter < 36; counter++)
         {
-            if (morsePhrase[i] == morse[counter])
+            if (strcmp(morseWord,morse[counter]) == 0)
             {
-                printf("%s ", text[counter]);
+                printf("%c", text[counter]);
             }
         }
+        morseWord = strtok(NULL, "/");
     }
+
+    return (0);
 }
+
+
+//     for (int i = 0; i < strlen(morsePhrase); ++i)
+//     {
+//         for (int counter = 0; counter < 36; counter++)
+//         {
+//             if (morsePhrase[i] == morse[counter])
+//             {
+//                 printf("%s ", text[counter]);
+//             }
+//         }
+//     }
+
