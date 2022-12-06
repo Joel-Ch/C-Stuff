@@ -6,7 +6,6 @@
 int main(int argc, char const *argv[])
 {
     char phrase[50];//input phrase
-
     char result[50][50] = {0};//output 2D array (i dont know what linked lists are)
     int outputCounter = 0;//counts through the output array
     bool opLast = false;//dis/allows operators to be entered by themselves
