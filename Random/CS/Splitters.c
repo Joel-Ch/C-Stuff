@@ -18,15 +18,21 @@ int main(int argc, char const *argv[])
         if ((phrase[inputCounter] == '-')&&(opLast == false))//check if - and if operators are allowed
         {
             outputCounter++;//start new word
+            
             strcpy(result[outputCounter], "-");//copy "-" into new word
+            
             outputCounter++;//go to next word
+            
             opLast = true;//disallow operators
         }
         else if ((phrase[inputCounter] == '+')&&(opLast == false))//check if + and if operators are allowed
         {
             outputCounter++;//start new word
+
             strcpy(result[outputCounter], "+");//copy "+" into new word
+            
             outputCounter++;//go to next word
+            
             opLast = true;//disallow operators
         }
         else
@@ -43,7 +49,7 @@ int main(int argc, char const *argv[])
 
     printf("done!\n");
 
-    for (size_t i = 0; i < 10; i++)
+    for (size_t i = 0; i < 20; i++)//printing the array for demonstration purposes
     {
         printf("%s\n", result[i]);
     }
