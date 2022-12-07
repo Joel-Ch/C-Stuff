@@ -11,7 +11,7 @@ int main(int argc, char const *argv[])
     bool opLast = false;//dis/allows operators to be entered by themselves
 
     printf("please enter a string\n");//user input
-    scanf("%s", &phrase);
+    scanf("%[^\n]", &phrase);
 
     for (size_t inputCounter = 0; inputCounter < strlen(phrase); inputCounter++)//counts through each character in the input string
     {
@@ -24,6 +24,8 @@ int main(int argc, char const *argv[])
             outputCounter++;//go to next word
             
             opLast = true;//disallow operators
+
+            printf("-\n");
         }
         else if ((phrase[inputCounter] == '+')&&(opLast == false))//check if + and if operators are allowed
         {
@@ -34,6 +36,12 @@ int main(int argc, char const *argv[])
             outputCounter++;//go to next word
             
             opLast = true;//disallow operators
+
+            printf("+\n");
+        }
+        else if ((phrase[inputCounter] == ' '))
+        {
+            printf("space\n");
         }
         else
         {
@@ -44,6 +52,8 @@ int main(int argc, char const *argv[])
             strcat(result[outputCounter], letter);//add the character to the end of the word
 
             opLast = false;//allow operators again
+
+            printf("character\n");
         }
     }
 

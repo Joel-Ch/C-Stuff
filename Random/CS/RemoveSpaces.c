@@ -11,7 +11,7 @@ char* RemoveSpaces(char *phrase, char *output)
         if(phrase[i] == 'e')
         {
             printf(" e \n");
-            // output[i] = 'f';
+            phrase[i] = 'f';
         }
         else
         {
@@ -19,6 +19,7 @@ char* RemoveSpaces(char *phrase, char *output)
         }
     }
     printf("output: %s\n", output);
+    printf("input: %s", phrase);
     // return output;
 }
 
