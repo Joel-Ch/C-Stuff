@@ -11,7 +11,7 @@
 int main(int argc, char const *argv[])
 {
     // add ruler
-    for (size_t i = 0; i < TOTALLENGTH; i++)
+    for (size_t i = 0; i <= TOTALLENGTH; i++)
     {
         printf("=");
     }
@@ -30,24 +30,38 @@ int main(int argc, char const *argv[])
 
         // check if the word is longer than allowed length
         if (length >= TOTALLENGTH)
-        {
-            // remove the original word(move backwards the right length then write over it with spaces)
-            for (size_t i = 0; i < strlen(word); i++)
+        {   
+            if (strlen(word) >= TOTALLENGTH)
             {
-                printf("\b");
+                printf("\b-\n");
+
+                length = 0;
+
+                printf("%c", word[strlen(word)-1]);
+
+                // memset(word, 0, strlen(word));
             }
-            for (size_t i = 0; i < strlen(word); i++)
+            
+            else
             {
-                printf(" ");
+                // remove the original word(move backwards the right length then write over it with spaces)
+                for (size_t i = 0; i < strlen(word); i++)
+                {
+                    printf("\b");
+                }
+                for (size_t i = 0; i < strlen(word); i++)
+                {
+                    printf(" ");
+                }
+                // new line
+                printf("\n");
+                // set new length
+                length = strlen(word);
+                // print the word again (on the new line)
+                printf("%s", word);
+                // remove the word from the memory
+                // memset(word, 0, strlen(word));
             }
-            // new line
-            printf("\n");
-            // set new length
-            length = strlen(word);
-            // print the word again (on the new line)
-            printf("%s", word);
-            // remove the word from the memory
-            memset(word, 0, strlen(word));
         }
 
         if(input == '#')
