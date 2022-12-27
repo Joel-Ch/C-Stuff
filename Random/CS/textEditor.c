@@ -5,7 +5,8 @@
 
 // NB it is impossible to go back up a line in the console, so this is the most complete version possible
 
-#define TOTALLENGTH 12
+#define TOTALLENGTH 15
+#define SIZE 50
 
 int main(int argc, char const *argv[])
 {
@@ -18,7 +19,7 @@ int main(int argc, char const *argv[])
 
     // assign variables
     char input;
-    char word[30];
+    char word[SIZE];
     int length = 0;
     
     // loop forever
@@ -56,8 +57,16 @@ int main(int argc, char const *argv[])
         {
             // move cursor back, write space, move cursor back again
             printf("\b \b");
+            // remove last input from word
+            word[strlen(word) - 1] = '\0';
             // remove one from length
             length -= 1;
+        }
+        else if(input == 13)// (enter)
+        {
+            printf("\n");
+            memset(word, 0, strlen(word));
+            length = 0;
         }
         else
         {
