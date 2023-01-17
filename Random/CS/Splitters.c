@@ -25,7 +25,7 @@ int main(int argc, char const *argv[])
             
             opLast = true;//disallow operators
 
-            printf("-\n");
+            // printf("-\n");
         }
         else if ((phrase[inputCounter] == '+')&&(opLast == false))//check if + and if operators are allowed
         {
@@ -37,11 +37,11 @@ int main(int argc, char const *argv[])
             
             opLast = true;//disallow operators
 
-            printf("+\n");
+            // printf("+\n");
         }
         else if ((phrase[inputCounter] == ' '))
         {
-            printf("space\n");
+            // printf("space\n");
         }
         else
         {
@@ -53,7 +53,7 @@ int main(int argc, char const *argv[])
 
             opLast = false;//allow operators again
 
-            printf("character\n");
+            // printf("character\n");
         }
     }
 
