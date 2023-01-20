@@ -4,7 +4,8 @@
 #include "ConvertToMorse.h"
 
 int main()
-{   char *phrase = calloc(sizeof(char), 100);
+{
+    char *phrase = calloc(100, sizeof(char));
     if (phrase == NULL)
         return -1;
 
@@ -13,7 +14,7 @@ int main()
     scanf("%[^\n]", phrase);
 
     printf("Translating %s into morse code\n", phrase);
-    char *morsePhrase = calloc(sizeof(char), 200);
+    char *morsePhrase = calloc(100, sizeof(char));
     if (morsePhrase == NULL)
         return -1;
     convertToMorse(phrase, morsePhrase);
