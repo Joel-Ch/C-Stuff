@@ -10,16 +10,17 @@ int main(int argc, char const *argv[])
         return 1;
     }
 
-    FILE *fp = fopen(argv[1], "rb");
+    FILE *fp = fopen(argv[1], "wb");
     if (fp == NULL)
     {
         printf("error allocating memory, please retry");
         return 2;
     }
-    fwrite(argv[2], sizeof(char), strlen(argv[2]), fp);
-    printf("written, exiting");
+    fwrite((char*)argv[2], sizeof(char), strlen((char*)argv[2])+1, fp);
 
     fclose(fp);
+    
+    printf("written, exiting");
 
     return 0;
 }
