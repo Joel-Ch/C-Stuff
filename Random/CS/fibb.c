@@ -9,7 +9,7 @@ int main(void)
     scanf("%i", &fibbEnd);
 
     if (fibbEnd == 0 || fibbEnd == 1)
-        printf("Fibonnaci number is 1/n");
+        printf("Fibonnaci number is 1\n");
 
     else if (fibbEnd > 1)
     {
